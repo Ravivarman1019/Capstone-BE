@@ -3,6 +3,8 @@ import connectDB from './config/db.js';
 import userRoutes from './routes/userRoutes.js';
 import emailRoutes from './routes/emailRoutes.js';
 import dotenv from 'dotenv';
+import db from './config/db.js';
+
 
 dotenv.config();
 
