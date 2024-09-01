@@ -1,5 +1,5 @@
 import express from 'express';
-import { sendEmail, getEmails } from '../controllers/emailController.js';
+import { sendEmail, getEmails } from '../controller/emailController.js';
 import authMiddleware from '../middleware/authMiddleware.js';
 
 const router = express.Router();

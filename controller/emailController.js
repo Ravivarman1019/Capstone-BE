@@ -1,4 +1,4 @@
-import Email from '../models/emailModel.js';
+import Email from '../models/Email.js';
 
 const sendEmail = async (req, res) => {
   const { recipient, subject, message } = req.body;
