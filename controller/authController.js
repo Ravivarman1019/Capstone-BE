@@ -1,8 +1,8 @@
-const User = require('../models/User');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
+import User from '../models/User.js';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 
-const register = async (req, res) => {
+export const register = async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -19,7 +19,7 @@ const register = async (req, res) => {
   }
 };
 
-const login = async (req, res) => {
+export const login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -38,5 +38,3 @@ const login = async (req, res) => {
     res.status(400).send({ error: 'Invalid login credentials' });
   }
 };
-
-module.exports = { register, login };

@@ -1,9 +1,10 @@
+import express from 'express';
+import { sendEmail, getEmails } from '../controllers/emailController.js';
+import authMiddleware from '../middleware/authMiddleware.js';
 
-const express = require('express');
-const { moveToTrash } = require('../controllers/emailController');
-const authMiddleware = require('../middleware/authMiddleware');
 const router = express.Router();
 
-router.patch('/emails/:id/trash', authMiddleware, moveToTrash);
+router.post('/send', authMiddleware, sendEmail);
+router.get('/', authMiddleware, getEmails);
 
-module.exports = router;
+export default router;

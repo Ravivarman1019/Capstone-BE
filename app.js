@@ -1,9 +1,10 @@
+import express from 'express';
+import connectDB from './config/db.js';
+import userRoutes from './routes/userRoutes.js';
+import emailRoutes from './routes/emailRoutes.js';
+import dotenv from 'dotenv';
 
-const express = require('express');
-const connectDB = require('./config/db');
-const userRoutes = require('./routes/userRoutes');
-const emailRoutes = require('./routes/emailRoutes');
-require('dotenv').config();
+dotenv.config();
 
 const app = express();
 
@@ -16,7 +17,6 @@ app.use(express.json());
 
 app.use('/api/users', userRoutes);
 app.use('/api/emails', emailRoutes);
-
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
