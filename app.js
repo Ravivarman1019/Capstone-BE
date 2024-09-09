@@ -1,8 +1,7 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import app from './app.js';
-import connectDB from './config/dp.js';
-import authRoutes from './routes/authRoutes.js';
+
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
